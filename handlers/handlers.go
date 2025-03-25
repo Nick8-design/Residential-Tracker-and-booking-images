@@ -44,7 +44,7 @@ func UploadFile(c *fiber.Ctx)error{
 
 	database.Db.Create(&image)
 
-	return c.Status(200).JSON(fiber.Map{"message": "File uploaded successfully", "file_path": fmt.Sprintf("/%s", file.Filename)})
+	return c.Status(200).JSON(fiber.Map{"message": "File uploaded successfully", "file_path": fmt.Sprintf("https://residential-tracker-and-booking-images.onrender.com/%s", file.Filename)})
 }
 
 
