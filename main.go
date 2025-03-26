@@ -32,5 +32,5 @@ func main() {
 	api := app.Group("/de", apikey.APIKeyMiddleware(handlers.GetGet))
 	api.Delete("lete/:filename", handlers.DeleteFile)
 
-	log.Fatal(app.Listen(":80"))
+	log.Fatal(app.Listen(":8080"))
 }
