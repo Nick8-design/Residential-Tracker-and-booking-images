@@ -40,13 +40,14 @@ func UploadFile(c *fiber.Ctx)error{
 
 	var image models.ImageModel
 	image.ImageName=file.Filename
-	image.FilePath=filePath
+	image.FilePath=fmt.Sprintf("https://residential-tracker-and-booking-images.onrender.com/%s", file.Filename)
 
 	database.Db.Create(&image)
 
 	return c.Status(200).JSON(fiber.Map{"message": "File uploaded successfully", "file_path": fmt.Sprintf("https://residential-tracker-and-booking-images.onrender.com/%s", file.Filename)})
 }
 
+var GetGet="plmnbvcxzaqwertyuio"
 
 
 
@@ -79,7 +80,6 @@ func ListFiles(c *fiber.Ctx) error {
 	return c.JSON(images)
 }
 
-var GetGet="plmnbvcxzaqwertyuio"
 
 func DeleteFile(c *fiber.Ctx) error {
 
